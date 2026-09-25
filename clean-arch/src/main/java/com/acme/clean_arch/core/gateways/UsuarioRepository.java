@@ -10,6 +10,7 @@ public interface UsuarioRepository {
     Optional<Usuario> buscarUsuario(Integer id);
     List<Usuario> buscarUsuarios();
     Usuario atualizarUsuario(Usuario usuariio, Integer id);
+    void apagarUsuario(Integer id);
 }
 
 

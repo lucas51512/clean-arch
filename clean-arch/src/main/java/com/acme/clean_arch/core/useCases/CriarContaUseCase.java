@@ -7,4 +7,5 @@ import java.util.Optional;
 public interface CriarContaUseCase {
     Usuario criarConta(Usuario usuario);
     Usuario atualizarConta(Usuario usuario, Integer id);
+    void apagarConta(Integer id);
 }

@@ -30,4 +30,8 @@ public class UsuarioService implements CriarContaUseCase {
     public Usuario atualizarConta(Usuario usuario, Integer id){
         return usuarioRepository.atualizarUsuario(usuario, id);
     }
+
+    public void apagarConta(Integer id){
+        usuarioRepository.apagarUsuario(id);
+    }
 }

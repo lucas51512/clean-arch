@@ -20,7 +20,7 @@ public class UsuarioController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Usuario> buscarUsuario(@RequestParam Integer id){
         return ResponseEntity.ok(usuarioService.buscarUsuario(id));
     }
@@ -30,8 +30,14 @@ public class UsuarioController {
         return ResponseEntity.ok(usuarioService.buscarUsuarios());
     }
 
-    @PutMapping("{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<Usuario> atualizarConta(@RequestBody Usuario usuario, @RequestParam Integer id){
         return ResponseEntity.ok(usuarioService.atualizarConta(usuario, id));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> apagarConta(@RequestParam Integer id) {
+        usuarioService.apagarConta(id);
+        return ResponseEntity.ok().build();
     }
 }

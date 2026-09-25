@@ -45,4 +45,10 @@ public class UsuarioRepositoryImpl implements UsuarioRepository {
         UsuarioEntity entitySalva = springDataUsuarioRepository.save(entityExistente);
         return mapper.toDomain(entitySalva);
     }
+
+    @Override
+    public void apagarUsuario(Integer id){
+        UsuarioEntity entityExistente = springDataUsuarioRepository.findById(id).orElseThrow(() -> new RuntimeException("Usuário não encontrado com o ID informado"));
+        springDataUsuarioRepository.delete(entityExistente);
+    }
 }
